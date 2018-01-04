@@ -1,0 +1,319 @@
+@import "mq";
+@import "fonts";
+
+// Uncomment for embeds
+//@import "embed";
+
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+}
+
+$female: #f6e01b;
+$male: #b9cde4;
+
+@keyframes levitate-left {
+  0%   {transform: translateX(0)}
+  50%  {transform: translateX(-4px)} 
+  0% {transform: translateX(0)}
+}
+@keyframes levitate-right {
+  0%   {transform: translateX(0)}
+  50%  {transform: translateX(4px)} 
+  0% {transform: translateX(0)}
+}
+
+.oly-container {
+	width: 100%;
+	max-width: 620px;
+	//height: 400px;
+	margin-bottom: 24px;
+}
+
+.oly-line {
+	stroke: #333;
+	stroke-width: 2;
+}
+
+.oly-bar {
+	stroke: none;
+
+	&.oly-bar--f {
+		fill: $female;
+	}
+	&.oly-bar--m {
+		fill: $male;
+	}
+}
+
+.oly-biglabel {
+	@include fs-headline(8);
+	font-size: 88px;
+
+	@include mq($until: tablet) {
+		font-size: 70px;
+	}
+
+	&.oly-biglabel--f {
+		fill: $female;
+
+		&.oly-biglabel--zero {
+			fill: #efefef;
+			transition: fill 0.2s linear 0.2s;
+		}
+
+	}
+
+	&.oly-biglabel--m {
+		fill: $male;
+		text-anchor: end;
+
+		&.oly-biglabel--zero {
+			fill: #efefef;
+			transition: fill 0.2s linear 0.2s;
+		}
+
+	}
+
+	& .oly-perc {
+		font-size: 32px;
+
+		@include mq($until: tablet) {
+			font-size: 20px;
+		}
+	}
+}
+
+.oly-smalllabel {
+	@include fs-header(1);
+
+	fill: white;
+
+	&.oly-smalllabel--m {
+		text-anchor: end;
+
+		&.oly-smalllabel--hidden {
+			fill-opacity: 0;
+			transition: fill-opacity 0.2s linear;
+		}
+	}
+
+	&.oly-smalllabel--f {
+		&.oly-smalllabel--hidden {
+			fill-opacity: 0;
+			transition: fill-opacity 0.2s linear;
+		}
+	}
+}
+
+.oly-hint {
+	@include fs-textSans(3);
+	text-anchor: middle;
+	transition: fill-opacity 0.1s linear;
+	fill-opacity: 1;
+
+	&.oly-hint-hidden {
+		fill-opacity: 0;
+	}
+}
+
+.oly-drag-circle {
+	fill: none;
+	stroke: none;
+	pointer-events: all;
+}
+
+.oly-drag__tri {
+	fill: #333;
+	stroke: none;
+	pointer-events: none;
+
+	&.oly-drag__tri--left {
+		animation: levitate-left 1.2s ease infinite;	
+	}
+	&.oly-drag__tri--right {
+		animation: levitate-right 1.2s ease infinite;	
+	}
+}
+
+.oly-submit {
+
+	display: block;
+	@include fs-textSans(4);
+	color: #767676;
+	background: #dcdcdc;
+	border: 2px solid #dcdcdc;
+	border-radius: 24px;
+	padding: 5px 10px;
+	margin: auto;
+
+	&:disabled {
+		background: white;
+		color: #bdbdbd;
+	}
+}
+
+.oly-svg {
+	overflow: visible !important;
+	margin-bottom: -24px;
+}
+
+.oly-feedback {
+
+	margin-top: 12px;
+	padding: 12px 10px;
+	@include fs-bodyCopy(2);
+	background-color: #efefef;
+	color: #767676;
+}
+
+.oly-lastp {
+	margin-bottom: 36px;
+}
+
+// chart stuff
+
+.oly-chart-container {
+	margin-top: 24px;
+	width: 100%;
+	max-width: 620px;
+}
+
+.oly-chart__title {
+	@include fs-header(3);
+	@include mq($until: tablet) {
+		@include fs-header(2);
+		line-height: 22px;
+	}
+}
+
+.oly-chart {
+	overflow: visible !important;
+}
+
+.oly-ceiling__label {
+	@include fs-textSans(1);
+}
+
+.oly-mid {
+	stroke-width: 1.5;
+	stroke: #333;
+	stroke-dasharray: 1,2;
+}
+
+.oly-ceiling {
+	stroke-width: 1.5;
+	stroke: #bdbdbd;
+}
+
+.oly-base {
+	stroke-width: 1.5;
+	stroke: #333;
+}
+
+.oly-year-line {
+	stroke: #efefef;
+	stroke-width: 1;
+}
+
+.oly-year__label {
+	@include fs-textSans(1);
+
+}
+
+.oly-tinylabel {
+	@include fs-textSans(1);
+}
+
+#oly-hatch {
+	& line {
+		stroke-width: 1.5;
+		stroke: #efefef;
+	}
+}
+
+.oly-startdot {
+	fill: $female;
+	fill-opacity: 1;
+	stroke: none;
+
+	&.oly-startdot--hidden {
+		fill-opacity: 0;
+		transition: fill-opacity 0.2;
+	}
+}
+
+.oly-women {
+	@include fs-header(1);
+	fill: white;
+	text-anchor: end;
+
+	fill-opacity: 1;
+	transition: fill-opacity 0.2s linear;
+
+	&.oly-women--hidden {
+		fill-opacity: 0;
+	}
+}
+
+.oly-not-held {
+	@include fs-textSans(2);
+	fill: #ccc;
+
+	@include mq($until: tablet) {
+		@include fs-textSans(1);
+		font-size: 11;
+	}
+
+}
+
+.oly-data-line {
+	fill: $female;
+	stroke: none;
+}
+
+.oly-ratio {
+	@include fs-textSans(1);
+	font-size: 15px;
+	font-weight: bold;
+	text-anchor: end;
+	fill-opacity: 1;
+
+	transition: fill-opacity 0.2s linear 0.4s;
+
+	&.oly-ratio--initial {
+		text-anchor: start;
+	}
+
+	&.oly-ratio--hidden {
+		fill-opacity: 0;
+		transition: fill-opacity 0.2s linear 0s;
+	}
+}
+
+// feedback area
+
+.oly-fb-bar--f {
+	fill: $female;
+}
+.oly-fb-bar--m {
+	fill: $male;
+}
+
+.oly-fb-label {
+	@include fs-textSans(3);
+	text-anchor: end;
+}
+
+.oly-fb-border {
+	stroke: #333;
+	stroke-width: 2.25;
+	fill: none;
+}
+
+.oly-fb {
+	overflow: visible !important;
+}
