@@ -1,5 +1,3 @@
-<h2 class='oly-chart__title'>Historic gender representation at Winter Olympics</h2>
-
 <svg width={{width}} height={{300}} on:click='draw()' class='oly-chart'>
 
 	<pattern id='oly-hatch' patternUnits='userSpaceOnUse'
@@ -37,7 +35,7 @@
 	class='oly-data-line' clip-path='url(#oly-mask)'>  </path>
 
 <text x={{ xScale(0) + 10 }} y={{ yScale(vals[0]) + 4 }}
-	
+
 	class='{{ drawing ? "oly-ratio oly-ratio--initial oly-ratio--hidden" : "oly-ratio oly-ratio--initial" }}'>
 	{{vals[0]}}%
 </text>
@@ -97,13 +95,13 @@ y1={{height - padding.bottom}} y2={{yScale(30)}}
 <line x1={{0}} x2={{width}} y1={{padding.top + (height-padding.top-padding.bottom)*0.5}} y2={{padding.top + (height-padding.top-padding.bottom)*0.5}} class='oly-mid'></line>
 
 <line x1={{0}} x2={{width}} y1={{height-padding.bottom}} y2={{height-padding.bottom}} class='oly-base'>
-	
+
 </line>
 
 </svg>
 
 <script>
-	
+
 
 	import { tween } from 'svelte-extras'
 
@@ -123,7 +121,7 @@ y1={{height - padding.bottom}} y2={{yScale(30)}}
 
 		},
 
-		methods : { 
+		methods : {
 
 
 			draw : function() {
@@ -133,12 +131,12 @@ y1={{height - padding.bottom}} y2={{yScale(30)}}
 				const that = this
 
 				tween.call(this, "maskW", this.get('width') - this.get('padding').left - this.get('padding').right,
-					{ 
+					{
 						duration : 1800,
 						easing : t => t < 0.5 ? 4.0 * t * t * t : 0.5 * Math.pow(2.0 * t - 2.0, 3.0) + 1.0
 
 					}).then(function() {
-						
+
 						this.set({ drawn : true })
 
 					}.bind(this))
@@ -150,7 +148,7 @@ y1={{height - padding.bottom}} y2={{yScale(30)}}
 		helpers : {
 
 			serialise : points => {
-				
+
                 return points.length === 0 ? '' : `M${points[0].join(',')} ${points.slice(1).filter(([x, y]) => !isNaN(y)).map(p => 'L' + p.join(',')).join(' ')}`
 			}
 		}
