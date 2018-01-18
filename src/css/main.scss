@@ -270,6 +270,40 @@ $male: #c6d1e5;
 
 }
 
+.oly-ruled {
+
+	@include fs-textSans(2);
+	font-size: 14px;
+	line-height: 19px;
+	fill-opacity: 1;
+	transition: fill-opacity 0.2s linear 0.4s;
+
+	@include mq($until: desktop) {
+		font-size: 13px;
+		line-height: 15px;
+	}
+
+	&.oly-ruled--hidden {
+		fill-opacity: 0;
+	}
+
+
+}
+
+.oly-ruled__line {
+	stroke: #333;
+	stroke-opacity: 1;
+	transition: stroke-opacity 0.2s linear 0.4s;
+
+	&.oly-ruled__line--hidden {
+		stroke-opacity: 0;
+	}
+}
+
+.oly-str {
+	font-weight: bold;
+}
+
 .oly-data-line {
 	fill: $female;
 	stroke: none;

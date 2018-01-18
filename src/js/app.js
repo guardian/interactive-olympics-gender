@@ -2,6 +2,7 @@ import Slider from '../components/slider/index.svelte'
 import HistoryChart from '../components/history_chart/index.svelte'
 import * as d3Scale from 'd3-scale'
 import * as d3Shape from 'd3-shape'
+import Quiz from './quiz.js'
 
 const d3 = Object.assign({}, d3Scale, d3Shape)
 
@@ -46,18 +47,39 @@ const areaGen = d3.area()
 	.y1(d => d[1])
 	.defined(d => !isNaN(d[1]))
 
-console.log(container.clientWidth)
+const quiz = new Quiz('gender-slider')
 
-const slider = new Slider({
-	target : container,
-	data : {
-		width,
-		height : 180,
-		mobile,
-		x : width/2,
-		answered : false,
-		touched : false
-	}
+quiz.getSummary().then( summ => {
+
+	const slider = new Slider({
+		target : container,
+		data : {
+			width,
+			height : 180,
+			mobile,
+			x : width/2,
+			answered : false,
+			touched : false,
+			quiz, summ
+		}
+	})
+
+}).catch (err => {
+
+	const slider = new Slider({
+		target : container,
+		data : {
+			width,
+			height : 180,
+			mobile,
+			x : width/2,
+			answered : false,
+			touched : false,
+			quiz, summ : 53
+		}
+	})
+
+
 })
 
 const chart = new HistoryChart({

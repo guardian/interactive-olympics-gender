@@ -59,6 +59,40 @@ width={{ xScale(6) - xScale(3) }} height={{ height - padding.bottom - padding.to
 	<tspan x={{mobile ? xScale(3.65) : xScale(4)}} dy='16'>held</tspan>
 </text>
 
+<!-- <defs>
+    <marker id="oly-arrow" viewBox="0 0 6 6" refX="3" refY="0"
+        markerWidth="8" markerHeight="8">
+      <path d="M 0,6 L 3,0 L 6,6 " stroke='#333' stroke-width='1' fill='none'/>
+    </marker>
+ </defs> -->
+
+<line class='{{ !drawn ? "oly-ruled__line oly-ruled__line--hidden" : "oly-ruled__line"}}' x1={{xScale(16.75)}} x2={{xScale(16.75)}}
+y1={{height - padding.bottom}} y2={{yScale(30)}}
+> </line>
+
+{{ #if !mobile }}
+
+<text class='{{ !drawn ? "oly-ruled oly-ruled--hidden" : "oly-ruled"}}' y={{ yScale(40) }}>
+	<tspan x={{mobile ? xScale(5) : xScale(9.8)}} y='60'>In <tspan class='oly-str'>1991</tspan>, the IOC ruled that all</tspan>
+	<tspan x={{mobile ? xScale(5) : xScale(9.8)}} y='75'>future Olympic sports must be</tspan>
+	<tspan x={{mobile ? xScale(5) : xScale(9.8)}} y='90'>open to women, but the rule</tspan>
+	<tspan x={{mobile ? xScale(5) : xScale(9.8)}} y='105'>didn't apply to existing sports</tspan>
+</text>
+
+{{ else }}
+
+<text class='{{ !drawn ? "oly-ruled oly-ruled--hidden" : "oly-ruled"}}' y={{ yScale(40) }}>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='60'>In <tspan class='oly-str'>1991</tspan>, the IOC ruled that</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='75'>all future Olympic sports</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='90'>must be open to women,</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='105'>but the rule didn't apply to</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='120'>
+	existing sports
+	</tspan>
+</text>
+
+{{ /if }}
+
 <line x1={{0}} x2={{width}} y1={{padding.top}} y2={{padding.top}} class='oly-ceiling'></line>
 <line x1={{0}} x2={{width}} y1={{padding.top + (height-padding.top-padding.bottom)*0.5}} y2={{padding.top + (height-padding.top-padding.bottom)*0.5}} class='oly-mid'></line>
 

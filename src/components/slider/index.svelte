@@ -46,7 +46,7 @@
 		{{{ answerText(val, touched) }}}
 	</p>
 
-	<BarChart val={{val}} width={{280}} leftSpace={{116}} readersVal={{40}} realVal={{47}} touched={{true}} /> <!-- change back to bring back conditional 3rd bar -->
+	<BarChart val={{val}} width={{280}} leftSpace={{116}} readersVal={{summ}} realVal={{47}} touched={{true}} /> <!-- change back to bring back conditional 3rd bar -->
 
 </div>
 
@@ -73,10 +73,6 @@
 
 		components : {
 			BarChart
-		},
-
-		data() {
-			return { }
 		},
 
 		oncreate () {
@@ -134,8 +130,15 @@
 		methods : {
 
 			submit : function(val) {
-				console.log(val)
-				this.set( { answered : true } )
+				
+				if(!this.get('answered')) {
+
+					this.set( { answered : true } )
+					this.get('quiz').postAnswer(val)
+
+				}
+
+
 			},
 
 			setStuff : function (event) {
@@ -174,9 +177,7 @@
 	          const rect = node.parentNode.getBoundingClientRect()
 	          const x = obj.pageX - rect.left
 	          const y = obj.pageY - rect.top
-
-	          console.log(obj.pageX, rect.left, x)
-
+	          
 	          callback.call( node, {
 
 	            x: x,//obj.offsetX,

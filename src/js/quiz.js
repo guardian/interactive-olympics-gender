@@ -2,10 +2,11 @@ import fetch from 'unfetch'
 
 class Quiz {
 
-	constructor(_id) {
+	constructor(_id, test = false) {
 
 		this._id = _id
-		this.boxUrl = 'https://interactive.guardianapis.com'
+		this.test = test
+		this.boxUrl = test ? 'http://localhost:3000' : 'https://interactive.guardianapis.com'
 		this.bucketUrl = 'https://interactive.guim.co.uk'
 	}
 
@@ -26,7 +27,9 @@ class Quiz {
 
 	getSummary () {
 
-		return fetch(`${this.bucketUrl}/quiz-server/${this._id}.json`)
+		const path = this.test ? `${this.bucketUrl}/quiz-server/test/${this._id}.json` : `${this.bucketUrl}/quiz-server/${this._id}.json`
+
+		return fetch(path)
 			.then(resp => resp.json())
 
 	}
