@@ -1,6 +1,9 @@
 @import "mq";
 @import "fonts";
 
+
+
+
 // Uncomment for embeds
 //@import "embed";
 
@@ -50,7 +53,7 @@ $male: #00b2ff;
 }
 
 .oly-biglabel {
-	@include fs-headline(8);
+	font-family: GraunNumbers;
 	font-size: 88px;
 
 	@include mq($until: tablet) {

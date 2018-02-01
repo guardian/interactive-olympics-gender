@@ -81,10 +81,10 @@ y1={{height - padding.bottom}} y2={{yScale(30)}}
 
 <text class='{{ !drawn ? "oly-ruled oly-ruled--hidden" : "oly-ruled"}}' y={{ yScale(40) }}>
 	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='60'>In <tspan class='oly-str'>1991</tspan>, the IOC ruled that</tspan>
-	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='75'>all future Olympic sports</tspan>
-	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='90'>must be open to women,</tspan>
-	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='105'>but the rule didn't apply to</tspan>
-	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='120'>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='77'>all future Olympic sports</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='94'>must be open to women,</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='111'>but the rule didn't apply to</tspan>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='118'>
 	existing sports
 	</tspan>
 </text>
