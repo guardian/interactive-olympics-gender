@@ -84,7 +84,7 @@ y1={{height - padding.bottom}} y2={{yScale(30)}}
 	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='77'>all future Olympic sports</tspan>
 	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='94'>must be open to women,</tspan>
 	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='111'>but the rule didn't apply to</tspan>
-	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='118'>
+	<tspan x={{mobile ? xScale(6.8) : xScale(9.8)}} y='128'>
 	existing sports
 	</tspan>
 </text>

@@ -47,7 +47,7 @@ const areaGen = d3.area()
 	.y1(d => d[1])
 	.defined(d => !isNaN(d[1]))
 
-const quiz = new Quiz('gender-slider')
+const quiz = new Quiz('gender-slider', production = true)
 
 quiz.getSummary().then( summ => {
 
@@ -75,7 +75,7 @@ quiz.getSummary().then( summ => {
 			x : width/2,
 			answered : false,
 			touched : false,
-			quiz, summ : 53
+			quiz, summ : 40
 		}
 	})
 
