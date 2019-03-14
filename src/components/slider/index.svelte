@@ -46,7 +46,7 @@
 		{{{ answerText(val, touched) }}}
 	</p>
 
-	<BarChart val={{val}} width={{280}} leftSpace={{116}} readersVal={{summ}} realVal={{47}} touched={{true}} /> <!-- change back to bring back conditional 3rd bar -->
+	<BarChart val={{val}} width={{280}} leftSpace={{116}} readersVal={{summ}} realVal={{43}} touched={{true}} /> <!-- change back to bring back conditional 3rd bar -->
 
 </div>
 
@@ -100,27 +100,29 @@
 					<p>The sharpest rise was noticed in the 1990s, when female athletes started to finally gain approval to compete in traditionally male sports, such as biathlon or ice hockey.</p>`
 				}*/
 
-				if(val <= 25) {
+				if(val === 43) {
+					return `<p>Spot on. Women are competing in more Olympic sports than ever, although they are still in minority. Nordic Combined remains a men’s only discipline and ski jumping offers more events for men.</p>`
+				}
+
+				else if(val <= 25) {
 					return `<p>The figure is actually not that low. The 1992 Winter Olympic Games pushed the proportion of female athletes above 25% with six new events for women in biathlon and short track speed skating.</p>
-					<p>That number has continued to rise, reaching 40% in 2010. In 2018, the percentage of women taking part in the Games is XX%.</p>`
+					<p>That number has continued to rise, reaching 40% in 2010. In 2018, the percentage of women taking part in the Games is 43%.</p>`
 				} else if(val <= 40) {
 
 					return `<p>The proportion of women at the Winter Olympic Games reached 40% in 2010, after a slow but consistent increase over time, rising from only 4% in 1924 to over 25% in 1992 . The sharpest rise was noticed in the 1990s, when female athletes started to finally gain approval to compete in traditionally male sports, such as biathlon or ice hockey.</p>
 
-					<p>In 2018, the percentage of women taking part in the Games is XX%.</p>`
+					<p>In 2018, the percentage of women taking part in the Games is 43%.</p>`
 				} else if(val < 50) {
 
-					return `<p>That’s close. The number has steadily increased, rising from 4% in 1924 to over 25% in 1992 and 40% in 2010.</p>
+					return `<p>That’s close. The number has steadily increased, rising from 4% in 1924 to over 25% in 1992 and 43% in 2018.</p>
 
 					<p>In 2018, the Olympic games have a total of 102 events: 49 events for men, 42 for women and seven mixed gender events. Nordic Combined is the single remaining men’s only discipline, while ski jumping is the only mixed sport with more events for men.</p>`
 				} else if(val === 50) {
 
-					return `<p>Not there yet. The percentage of female athletes has seen a slow but consistent increase over time, rising from only 4% in 1924 to over 25% in 1992, and reaching xx% in 2018.</p>
+					return `<p>Not there yet. The percentage of female athletes has seen a slow but consistent increase over time, rising from only 4% in 1924 to over 25% in 1992, and reaching 43% in 2018.</p>
 
 					<p>The sharpest rise was noticed in the 1990s, when female athletes started to finally gain approval to compete in traditionally male sports, such as biathlon or ice hockey.</p>`
-				} /*else if(val === XX) { TODO fill in
-					return `<p>Spot on. Women are competing in more Olympic sports than ever, although they are still in minority. Nordic Combined remains a men’s only discipline and ski jumping offers more events for men.</p>`
-				}*/
+				}
 
 				return `<p>Not likely to happen any time soon. While many sports have made substantial strides to ensure equal numbers of men’s and women’s events in the programme, there are still fewer women competing. Nordic Combined remains a men’s only discipline and ski jumping offers more events for men.</p>`
 
